@@ -1,0 +1,73 @@
+// Mixins
+@mixin p($property, $val)
+  -webkit-#{$property}: $val
+  -moz-#{$property}: $val
+  -ms-#{$property}: $val
+  #{$property}: $val
+
+@mixin dropshadow ()
+  box-shadow: 0 0 15px 2px rgba(0,0,0, 0.3)
+
+@mixin round ()
+  border-radius: 4px
+
+// General
+body
+  font-size: 30px
+  font-family: 'Forma Nuova Neretta', sans-serif
+  -moz-font-feature-settings: "ss02"
+  -webkit-font-feature-settings: "ss02"
+  font-feature-settings: "ss02"
+  -webkit-font-smoothing: antialiased
+  margin: 0
+
+a
+  color: white
+  text-decoration: none
+  &:hover
+    color: white
+    text-decoration: none
+    color: yellow
+
+h1
+  margin: 0
+
+p
+  margin: 20px 0 0 0
+
+
+// Header / Nav
+.slide
+  +p(transform, translateY(0))
+
+header
+  text-transform: uppercase
+  position: fixed
+  width: 100%
+  top: 0
+  text-align: center
+  +p(transform, translateY(-140px))
+  color: white
+  +p(transition, 0.4s ease)
+  div
+    margin: 20px 0 0 0
+    box-shadow: 0 0 15px 2px rgba(0,0,0, 0.3)
+    +round
+    display: inline-block
+    padding: 16px 20px 10px
+    background-color: #FFC633
+    font-size: 1em
+    font-weight: normal
+
+
+// Project Index
+
+.index
+  margin-top: 52vh
+
+.project
+  padding: 30px
+  max-width: 1200px
+  margin: auto
+  +dropshadow
+  +round

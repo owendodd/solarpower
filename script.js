@@ -16,13 +16,13 @@ $(document).ready(function(){
 
 $(document).mousemove(function(event) {
 
-        if (event.pageY<80) {
+        if (event.pageY<150) {
 
-          $('.head').addClass("slide");
+          $('header').addClass("slide");
 
         } else {
 
-          $('.head').removeClass("slide");
+          $('header').removeClass("slide");
         }
 
       })
