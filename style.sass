@@ -11,6 +11,17 @@
 @mixin round ()
   border-radius: 4px
 
+@mixin block ()
+  box-shadow: 0 0 15px 2px rgba(0,0,0, 0.3)
+  +round
+  display: inline-block
+  padding: 16px 20px 10px
+  background-color: #FFC633
+  font-size: 1em
+  font-weight: normal
+
+
+
 // General
 body
   font-size: 30px
@@ -34,6 +45,7 @@ h1
 
 p
   margin: 20px 0 0 0
+  line-height: 1.3
 
 
 // Header / Nav
@@ -42,6 +54,7 @@ p
 
 header
   text-transform: uppercase
+  z-index: 100
   position: fixed
   width: 100%
   top: 0
@@ -51,23 +64,25 @@ header
   +p(transition, 0.4s ease)
   div
     margin: 20px 0 0 0
-    box-shadow: 0 0 15px 2px rgba(0,0,0, 0.3)
-    +round
-    display: inline-block
-    padding: 16px 20px 10px
-    background-color: #FFC633
-    font-size: 1em
-    font-weight: normal
+    +block
 
 
 // Project Index
 
 .index
-  margin-top: 52vh
+  margin: 200px 0
 
 .project
   padding: 30px
-  max-width: 1200px
-  margin: auto
+  max-width: 90vw
+  margin: 0 auto 80px
   +dropshadow
   +round
+  h1
+    font-size: 1.4em
+    font-weight: normal
+    text-transform: uppercase
+  a
+    +block
+    margin-top: 40px
+    margin-right: 20px

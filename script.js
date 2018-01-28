@@ -16,7 +16,7 @@ $(document).ready(function(){
 
 $(document).mousemove(function(event) {
 
-        if (event.pageY<150) {
+        if (event.clientY<150) {
 
           $('header').addClass("slide");
 
