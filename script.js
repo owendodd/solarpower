@@ -17,7 +17,7 @@ $(document).ready(function() {
   $(document).mousemove(function(event) {
 
     if (event.clientY < 120) {
-
+      
       $('header').addClass("slideDown");
 
     } else {
@@ -30,13 +30,15 @@ $(document).ready(function() {
 
   $(document).scroll(function(event) {
 
-    if(window.pageYOffset>200) {
+    if(window.pageYOffset>30) {
 
       $('header').addClass("slideUp");
+      $('.logo img').addClass("slideImg");
 
     } else {
 
       $('header').removeClass("slideUp");
+      $('.logo img').removeClass("slideImg");
     }
 
   })

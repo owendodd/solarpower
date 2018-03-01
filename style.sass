@@ -12,11 +12,40 @@
 @mixin round ()
   border-radius: 4px
 
+=animation($duration)
+  -webkit-animation: $duration
+  -moz-animation: $duration
+  -ms-animation: $duration
+  animation: $duration
+
+=spin ($degrees)
+  @-webkit-keyframes spin
+    0%
+      -webkit-transform: rotate(0deg)
+    100%
+      -webkit-transform: rotate($degrees)
+  @-moz-keyframes spin
+    0%
+      -moz-transform: rotate(0deg)
+    100%
+      -moz-transform: rotate($degrees)
+  @-ms-keyframes spin
+    0%
+      -ms-transform: rotate(0deg)
+    100%
+      -ms-transform: rotate($degrees)
+  @keyframes spin
+    0%
+      transform: rotate(0deg)
+    100%
+      transform: rotate($degrees)
+
 
 
 // General
 body
-  font-size: 30px
+  font-size: 28px
+  color: black
   font-family: 'Forma Nuova Neretta', sans-serif
   -moz-font-feature-settings: "ss02", "ss03"
   -webkit-font-feature-settings: "ss02", "ss03"
@@ -26,7 +55,11 @@ body
   background-color: yellow
 
 h1
-  margin: 0
+    font-size: 1em
+    font-weight: normal
+    text-align: center
+    text-transform: uppercase
+    margin: 0
 
 p
   margin: 20px 0 0 0
@@ -35,69 +68,63 @@ p
 .content
   background-color: white
 
-footer
-  height: 150px
-  +p(transform, rotate(180deg))
-
 
 
 // Header / Nav
 .slideUp
-  +p(transform, translateY(-180px))
+  +p(transform, translateY(-60px))
+  height: 80px
+
 
 .slideDown
   +p(transform, translateY(0))
+  height: 80px
+
+
 
 header
   text-transform: uppercase
+  background: linear-gradient( rgba(255,255,0,1) 30%, rgba(255,255,0,0) 100%)
   position: fixed
   top: 0
+  height: 50vh
   width: 100%
   text-align: center
   +p(transition, 0.4s ease)
   pointer-events: none
-
-.logo
-  background-color: yellow
   display: flex
   align-items: center
   justify-content: center
-  padding: 40px 0 10px
-  height: 100px
+
+.logo
+  padding: 30px 0 40px
   pointer-events: auto
   img
-    height: 7vw
+    height: 22px
 
+.header-links
+  position: fixed
+  padding: 20px 0 0
+  left: 100%
+  top: 50%
+  display: flex
+  align-items: center
+  justify-content: center
+  +p(transform, translate(-60%, -50%) rotate(90deg))
+  +p(transform-origin, 50% 50%)
 
-.press, .about
-  position: absolute
-  width: 100px
+.projects, .about
   text-align: center
   pointer-events: auto
   a
-    color: #F5EC79
+    color: #F2E8E0
+    text-transform: none
     text-decoration: none
+    padding-right: 30px
     &:hover
-      color: white
+      color: black
 
-.press
-  +p(transform, rotate(-90deg))
-  +p(transform-origin, 100% 100%)
-  top: 10px
-  right: 20px
 
-.about
-  +p(transform, rotate(90deg))
-  +p(transform-origin, 0% 100%)
-  top: 10px
-  left: 20px
-
-.gradient
-  background: linear-gradient( rgba(255,255,0,1), rgba(255,255,0,0))
-  height: 100px
-  width: 100%
-  margin-top: -1px
-  pointer-events: none
 
 
 
@@ -105,22 +132,47 @@ header
 // Project Index
 
 .index
-  padding: 50vh 0
+  padding: 50vh 0 0
 
-.project
+.project, #about
   padding: 30px
   max-width: 800px
   margin: 0 auto 80px
-  h1
-    font-size: 1em
-    text-align: center
-    font-weight: normal
-    text-transform: uppercase
-  .author
-    font-family: 'Forma Nuova Corsiva', sans-serif
 
-.buy a
-  color: black
+.proj-thumb img
+  max-width: 800px
+
+.title
+  font-family: 'Forma Nuova Corsiva', sans-serif
+
+input[type=submit], .link a
+  color: #505050
   text-decoration: none;
+  border: none
+  font-size: 28px
+  font-family: 'Forma Nuova Neretta', sans-serif
+  -moz-font-feature-settings: "ss02", "ss03"
+  -webkit-font-feature-settings: "ss02", "ss03"
+  font-feature-settings: "ss02", "ss03"
+  -webkit-font-smoothing: antialiased
+  text-decoration: underline
+  padding: 0
+  color: black
   &:hover
-    color: #F5EC79
+    color: yellow
+  
+
+
+
+  // Footer
+
+#about
+  max-width: 800px 
+  margin: 200px auto 80px
+  a
+    margin-right: 30px
+
+.gradient
+  height: 60px
+  background: linear-gradient( rgba(255,255,0,0) 30%, rgba(255,255,0,0.8) 100%)
+

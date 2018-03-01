@@ -1,19 +1,19 @@
 @font-face {
 	font-family: 'Forma Nuova Corsiva';
-	src: url('webfonts/FormaNuova-Corsiva.eot');
-	src: url('webfonts/FormaNuova-Corsiva.eot?#iefix') format('embedded-opentype'),
-		url('webfonts/FormaNuova-Corsiva.woff') format('woff'),
-		url('webfonts/FormaNuova-Corsiva.ttf') format('truetype');
+	src: url('webfonts/formanuova-corsiva.eot');
+	src: url('webfonts/formanuova-corsiva.eot?#iefix') format('embedded-opentype'),
+		url('webfonts/formanuova-corsiva.woff') format('woff'),
+		url('webfonts/formanuova-corsiva.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Forma Nuova Neretta';
-	src: url('webfonts/FormaNuova-Neretta.eot');
-	src: url('webfonts/FormaNuova-Neretta.eot?#iefix') format('embedded-opentype'),
-		url('webfonts/FormaNuova-Neretta.woff') format('woff'),
-		url('webfonts/FormaNuova-Neretta.ttf') format('truetype');
+	src: url('webfonts/formanuova-neretta.eot');
+	src: url('webfonts/formanuova-neretta.eot?#iefix') format('embedded-opentype'),
+		url('webfonts/formanuova-neretta.woff') format('woff'),
+		url('webfonts/formanuova-neretta.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
