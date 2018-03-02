@@ -6,45 +6,11 @@
   -ms-#{$property}: $val
   #{$property}: $val
 
-@mixin dropshadow ()
-  box-shadow: 0 0 15px 2px yellow
-
-@mixin round ()
-  border-radius: 4px
-
-=animation($duration)
-  -webkit-animation: $duration
-  -moz-animation: $duration
-  -ms-animation: $duration
-  animation: $duration
-
-=spin ($degrees)
-  @-webkit-keyframes spin
-    0%
-      -webkit-transform: rotate(0deg)
-    100%
-      -webkit-transform: rotate($degrees)
-  @-moz-keyframes spin
-    0%
-      -moz-transform: rotate(0deg)
-    100%
-      -moz-transform: rotate($degrees)
-  @-ms-keyframes spin
-    0%
-      -ms-transform: rotate(0deg)
-    100%
-      -ms-transform: rotate($degrees)
-  @keyframes spin
-    0%
-      transform: rotate(0deg)
-    100%
-      transform: rotate($degrees)
-
-
 
 // General
 body
-  font-size: 28px
+  font-size: 32px
+  line-height: 1.4em
   color: black
   font-family: 'Forma Nuova Neretta', sans-serif
   -moz-font-feature-settings: "ss02", "ss03"
@@ -56,6 +22,7 @@ body
 
 h1
     font-size: 1em
+    line-height: 1em
     font-weight: normal
     text-align: center
     text-transform: uppercase
@@ -72,19 +39,19 @@ p
 
 // Header / Nav
 .slideUp
-  +p(transform, translateY(-60px))
-  height: 80px
+  +p(transform, translateY(-100px))
+  height: 130px
 
 
 .slideDown
   +p(transform, translateY(0))
-  height: 80px
+  height: 130px
 
 
 
 header
   text-transform: uppercase
-  background: linear-gradient( rgba(255,255,0,1) 30%, rgba(255,255,0,0) 100%)
+  background: linear-gradient( rgba(255,255,0,1) 40%, rgba(255,255,0,0) 100%)
   position: fixed
   top: 0
   height: 50vh
@@ -100,27 +67,18 @@ header
   padding: 30px 0 40px
   pointer-events: auto
   img
-    height: 22px
+    height: 25px
 
-.header-links
-  position: fixed
-  padding: 20px 0 0
-  left: 100%
-  top: 50%
-  display: flex
-  align-items: center
-  justify-content: center
-  +p(transform, translate(-60%, -50%) rotate(90deg))
-  +p(transform-origin, 50% 50%)
-
-.projects, .about
+.nav
+  line-height: 1em
+  font-size: 32px
   text-align: center
   pointer-events: auto
+  color: #F2E8E0
   a
-    color: #F2E8E0
     text-transform: none
+    color: #F2E8E0
     text-decoration: none
-    padding-right: 30px
     &:hover
       color: black
 
@@ -134,8 +92,8 @@ header
 .index
   padding: 50vh 0 0
 
-.project, #about
-  padding: 30px
+.project, #info
+  padding: 20px
   max-width: 800px
   margin: 0 auto 80px
 
@@ -146,33 +104,41 @@ header
   font-family: 'Forma Nuova Corsiva', sans-serif
 
 input[type=submit], .link a
-  color: #505050
-  text-decoration: none;
+  color: black
+  text-decoration: underline
   border: none
-  font-size: 28px
+  font-size: 32px
   font-family: 'Forma Nuova Neretta', sans-serif
   -moz-font-feature-settings: "ss02", "ss03"
   -webkit-font-feature-settings: "ss02", "ss03"
   font-feature-settings: "ss02", "ss03"
   -webkit-font-smoothing: antialiased
   text-decoration: underline
+  cursor: pointer
   padding: 0
   color: black
   &:hover
-    color: yellow
-  
+    color: #F2E8E0
 
 
 
   // Footer
 
-#about
+#info
   max-width: 800px 
-  margin: 200px auto 80px
+  margin: 200px auto 0
+  padding-bottom: 120px
   a
-    margin-right: 30px
+    color: black
+    &:hover
+      color: #F2E8E0
 
-.gradient
-  height: 60px
-  background: linear-gradient( rgba(255,255,0,0) 30%, rgba(255,255,0,0.8) 100%)
+// Mobile
 
+@media only screen and (max-width: 800px)
+
+  body, input[type=submit], .link a
+    font-size: 24px
+
+  .proj-thumb img
+    max-width: 100%
