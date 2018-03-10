@@ -9,8 +9,8 @@
 
 // General
 body
-  font-size: 32px
-  line-height: 1.4em
+  font-size: 25px
+  line-height: 1.2em
   color: black
   font-family: 'Forma Nuova Neretta', sans-serif
   -moz-font-feature-settings: "ss02", "ss03"
@@ -29,7 +29,7 @@ body
   background: linear-gradient( rgba(255,255,0,1) 0%, rgba(242,232,224,1) 100%)
 
 h1
-    font-size: 1em
+    font-size: 28px
     line-height: 1em
     font-weight: normal
     text-align: center
@@ -45,7 +45,7 @@ p
 
 // Header / Nav
 .slideUp
-  +p(transform, translateY(-100px))
+  +p(transform, translateY(-130px))
   height: 130px
 
 
@@ -58,12 +58,12 @@ p
 header
   text-transform: uppercase
   // background: linear-gradient( rgba(255,255,0,1) 40%, rgba(255,255,0,0) 100%)
-  // position: fixed
+  position: fixed
   top: 0
   height: 50vh
   width: 100%
   text-align: center
-  +p(transition, 0.4s ease)
+  +p(transition, 0.5s ease)
   pointer-events: none
   // display: flex
   // align-items: center
@@ -79,14 +79,15 @@ header
 
 .nav
   line-height: 1em
-  font-size: 32px
-  text-align: center
+  font-size: 25px
+  text-align: left
   pointer-events: auto
   color: #F2E8E0
   a
     text-transform: none
     color: #F2E8E0
     text-decoration: none
+    margin-right: 30px
     &:hover
       color: black
 
@@ -104,9 +105,9 @@ header
 .project, #info
   width: 100%
   margin: auto
-  padding-bottom: 80px
+  padding: 40px 0 80px
   background: linear-gradient( rgba(255,255,0,1) 0%, rgba(242,232,224,1) 100%)
-  p
+  p, form
     padding: 20px
     max-width: 900px
     margin: auto
@@ -118,11 +119,15 @@ header
 .title
   font-family: 'Forma Nuova Corsiva', sans-serif
 
+.metadata
+  font-size: 18px
+
 input[type=submit], .link a
   color: black
   text-decoration: underline
+  background-color: none
   border: none
-  font-size: 32px
+  font-size: 25px
   font-family: 'Forma Nuova Neretta', sans-serif
   -moz-font-feature-settings: "ss02", "ss03"
   -webkit-font-feature-settings: "ss02", "ss03"
